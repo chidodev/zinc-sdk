@@ -1,0 +1,58 @@
+{
+    "name": "@gamesta/zinc-sdk",
+    "version": "1.0",
+    "description": "Simple SDK for accessing OP APIs",
+    "homepage": "https://github.com/chidodev/zinc-sdk",
+    "keywords": [
+        "Gamesta",
+        "Zinc APP"
+    ],
+    "bugs": {
+        "url": "https://github.com/chidodev/zinc-sdk/issues"
+    },
+    "main": "./build/index.js",
+    "scripts": {
+        "build": "tsc -p .",
+        "prepare": "npm run -s build",
+        "test": "npm run -s build && jest",
+        "precommit": "pretty-quick --staged"
+    },
+    "author": {
+        "name": "Donald Chi",
+        "url": "https://chidev.me"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chidodev/zinc-sdk.git"
+    },
+    "dependencies": {
+        "@types/axios": "^0.14.0",
+        "@types/node": "^10.14.10",
+        "axios": "^0.21.1",
+        "object-assign-deep": "^0.3.1"
+    },
+    "devDependencies": {
+        "@types/jest": "^22.2.3",
+        "hoek": "^5.0.4",
+        "husky": "^0.14.3",
+        "jest": "^24.8.0",
+        "prettier": "^1.18.2",
+        "pretty-quick": "^1.11.1",
+        "typescript": "^3.5.2"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "testEnvironment": "node",
+        "transform": {
+            "^.+\\.(ts|tsx)$": "./preprocessor.js"
+        },
+        "testMatch": [
+            "**/tests/*.(ts|tsx|js)"
+        ]
+    }
+}
